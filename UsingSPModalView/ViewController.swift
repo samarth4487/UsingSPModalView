@@ -10,10 +10,20 @@ import UIKit
 import SPModalView
 
 class ViewController: UIViewController {
+    
+    let modalView = SPModal()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let viewWidth = view.frame.width
+        
+        modalView.frame = CGRect(x: 30, y: (viewWidth - 40)/2, width: viewWidth - 60, height: viewWidth)
+        modalView.backgroundColor = .black
+        modalView.set(image: #imageLiteral(resourceName: "sample"))
+        modalView.set(heading: "Samarth Paboowal")
+        modalView.set(textColor: .white)
+        view.addSubview(modalView)
     }
 
 
