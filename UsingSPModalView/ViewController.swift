@@ -11,6 +11,8 @@ import SPModalView
 
 class ViewController: UIViewController {
     
+    //MARK: - Properties
+    
     let blackModalButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -34,12 +36,18 @@ class ViewController: UIViewController {
         return view.frame.width
     }
 
+    
+    //MARK: - View Controller Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideModal))
         view.addGestureRecognizer(tapGesture)
     }
+    
+    
+    //MARK: - View Setup Methods
 
     func setupButtons() {
         
@@ -68,6 +76,9 @@ class ViewController: UIViewController {
         modalView.set(textColor: .white)
         view.addSubview(modalView)
     }
+    
+    
+    //MARK: - Display and Hide Modal Methods
     
     @objc func displayBlackModal() {
         addModalWith(color: .black)
